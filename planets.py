@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Sep  7 01:03:44 2017
-
-@author: DerSc
+Script by John Wigg
 """
 
 import ephem
