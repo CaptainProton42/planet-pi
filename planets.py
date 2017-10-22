@@ -1,21 +1,18 @@
-# -*- coding: utf-8 -*-
-"""
-Script by John Wigg
-"""
+"""script by John Wigg"""
 
-import ephem
+# -*- coding: utf-8 -*-
+
 import datetime
 import time
+import ephem
 
 def get_state(planet):
+    """ returs the next rising, setting and current status of a given planet"""
     data = [0] * 3
     obs.date = datetime.datetime.utcnow()
     data[1] = obs.next_rising(planet)
     data[2] = obs.next_setting(planet)
-    if data[1] > data[2]:
-        data[0] = True
-    else:
-        data[0] = False
+    data[0] = data[1] > data[2]
     return data
 
 obs = ephem.Observer()
